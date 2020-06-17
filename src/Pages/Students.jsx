@@ -5,7 +5,7 @@ import Template from '../Components/template';
 const Characters = () => {
     const [characters, setCharacter] = useState([]);
     useEffect(() => {
-        fetch(`http://hp-api.herokuapp.com/api/characters`)
+        fetch(`http://hp-api.herokuapp.com/api/characters/students`)
         .then((res) => res.json())
         .then((character) => setCharacter(character));
     }, []);
@@ -13,7 +13,7 @@ const Characters = () => {
     return (
         <Template>
             <div className="col-12">
-                <h1 className="col-12 text-center">All Characters</h1>
+                <h1 className="col-12 text-center">Students</h1>
                 <div className="d-flex justify-content-between">
                     <ul className="list-group list-group-flush">
                         {characters.map(character => (
