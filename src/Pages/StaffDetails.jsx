@@ -3,25 +3,26 @@ import { useParams } from "react-router-dom";
 import Template from "../Components/template";
 
 const StaffDetails = () => {
-  const { characterName } = useParams();
+  const { staffName } = useParams();
 
-  const [character, setCharacter] = React.useState({});
+  const [staff, setStaff] = React.useState({});
 
   React.useEffect(() => {
-    fetch(`http://hp-api.herokuapp.com/api/characters/staff/${characterName}`)
+    fetch(`http://hp-api.herokuapp.com/api/characters/staff/${staffName}`)
       .then((res) => res.json())
-      .then((character) => setCharacter(character));
-  }, [characterName]);
+      .then((staff) => setStaff(staff));
+  }, [staffName]);
 
+  console.log ()
   return (
     <Template>
       <div className="col-12">
         <div className="d-flex justify-content-around">
-          <img src={character.image} alt="Charcter" />
+          <img src={staff.image} alt="Character" />
           <div className="d-flex flex-column align-items-center justify-content-center">
-            <h1>{character.name}</h1>
-            <h4>Species: {character.species}</h4>
-            <h4>Gender: {character.gender}</h4>
+            <h1>{staff.name}</h1>
+            <h4>Species: {staff.species}</h4>
+            <h4>Gender: {staff.gender}</h4>
           </div>
         </div>
       </div>

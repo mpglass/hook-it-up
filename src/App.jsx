@@ -2,39 +2,39 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home"; 
-import Staff from "./Pages/Staff";
-import Students from "./Pages/Students";
-import NotFound from "./Pages/NotFound"
+import Staffs from "./Pages/Staff";
 import StaffDetails from "./Pages/StaffDetails";
-import StudentDetails from "./Pages/StudentDetails";
+// import Students from "./Pages/Students";
+// import StudentDetails from "./Pages/StudentDetails";
+import NotFound from "./Pages/NotFound"
+
 
 const App = () => {
   return (
     <BrowserRouter>
       <Navbar />
       <Switch>
-
-        <Route exact path="/Students">
-          <Students />
-        </Route>
-
-        <Route exact path="/Students/:characterName">
-          <StudentDetails />
-        </Route>
-
         <Route exact path="/">
           <Home />
         </Route>
 
         <Route exact path="/Staff">
-          <Staff />
+          <Staffs />
         </Route>
 
-        <Route exact path="/Staff/:characterName">
+        <Route exact path="/Staff/StaffDetails/:staffName">
           <StaffDetails />
         </Route>
 
-        <Route exact path="*">
+        {/* <Route exact path="/Students">
+          <Students />
+        </Route>
+
+        <Route exact path="/Students/:Name">
+          <StudentDetails />
+        </Route> */}
+
+        <Route path="*">
           <NotFound />
         </Route>
 
